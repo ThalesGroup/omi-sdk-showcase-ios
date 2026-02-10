@@ -1,0 +1,3 @@
+[submodule "mobile-cline-bank"]
+	path = mobile-cline-bank
+	url = ../common/mobile-cline-bank.git
