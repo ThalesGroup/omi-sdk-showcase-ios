@@ -70,4 +70,4 @@ The OMI SDK Showcase App is already configured with the backend (Access) out of 
 
 ### Changing the configuration
 If there is a need to change the token server configuration within the example app it is going to be best to do it using the Onegini SDK Configurator. Follow
-the steps as described in: `https://github.com/onewelcome/sdk-configurator`
+the steps as described in: `https://github.com/ThalesGroup/sdk-configurator`
