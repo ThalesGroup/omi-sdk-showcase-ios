@@ -3,5 +3,4 @@
 struct DummyData {
     static let customAuthInitialChallenge = "OneWelcome"
     static let customAuthFinishRegistrationChallenge = "dummyRespondData"
-    static let customRegistrationChallenge = "2137"
 }
