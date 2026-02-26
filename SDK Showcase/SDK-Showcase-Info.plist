@@ -2,16 +2,40 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSCameraUsageDescription</key>
-	<string>Camera is required to use QR code registration</string>
-	<key>NSFaceIDUsageDescription</key>
-	<string>FaceID is used for an optional biometric authentication</string>
+	<key>AppBackendUrl</key>
+	<string>https://demo-ebanking.rnd.gemaltodigitalbankingidcloud.com/api/v1/tenants/cloudtenant/visits/</string>
+	<key>FTPServer</key>
+	<string>h-sdk.online-metrix.net</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>https://demo-ebanking.rnd.gemaltodigitalbankingidcloud.com</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
+			<key>https://demo-signal-collector.rnd.gemaltodigitalbankingidcloud.com</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
+	<key>REBackendUrl</key>
+	<string>https://demo-signal-collector.rnd.gemaltodigitalbankingidcloud.com/api/v1/tenants/cloudtenant/signals</string>
+	<key>TMXOrgId</key>
+	<string>2rj4semg</string>
 	<key>UILaunchScreen</key>
 	<dict>
-		<key>UIImageName</key>
-		<string>AppLogo</string>
 		<key>UIColorName</key>
 		<string>AccentColor</string>
+		<key>UIImageName</key>
+		<string>AppLogo</string>
 	</dict>
 </dict>
 </plist>

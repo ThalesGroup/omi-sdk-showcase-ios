@@ -17,6 +17,19 @@
 		5748DC4E2E447EF800B860D3 /* ShowcaseApp+ViewRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5748DC4D2E447EF000B860D3 /* ShowcaseApp+ViewRouting.swift */; };
 		5748DC522E449CA100B860D3 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5748DC512E449CA100B860D3 /* HeaderView.swift */; };
 		5774538C2E8E7D50007864DE /* MobileAuthRequestInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5774538B2E8E7D50007864DE /* MobileAuthRequestInteractor.swift */; };
+		577709862F47165D00B04968 /* TMXProfilingConnections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 577709832F47165D00B04968 /* TMXProfilingConnections.framework */; };
+		577709872F47165D00B04968 /* TMXProfilingConnections.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 577709832F47165D00B04968 /* TMXProfilingConnections.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		577709882F47165D00B04968 /* TMXProfiling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 577709842F47165D00B04968 /* TMXProfiling.framework */; };
+		577709892F47165D00B04968 /* TMXProfiling.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 577709842F47165D00B04968 /* TMXProfiling.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5777098A2F47165D00B04968 /* TMXBehavioSec.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 577709852F47165D00B04968 /* TMXBehavioSec.framework */; };
+		5777098B2F47165D00B04968 /* TMXBehavioSec.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 577709852F47165D00B04968 /* TMXBehavioSec.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5777098D2F4717B600B04968 /* GAHRiskEngineIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5777098C2F4717B600B04968 /* GAHRiskEngineIntegration.swift */; };
+		5777098F2F4748C100B04968 /* tmx_rnd_gemaltodigitalbankingidcloud_com.cer in Resources */ = {isa = PBXBuildFile; fileRef = 5777098E2F4748C100B04968 /* tmx_rnd_gemaltodigitalbankingidcloud_com.cer */; };
+		577709932F4749DF00B04968 /* base.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 577709922F4749DF00B04968 /* base.xcconfig */; };
+		577709942F474A3C00B04968 /* base.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 577709922F4749DF00B04968 /* base.xcconfig */; };
+		577709A12F48602500B04968 /* GAHRiskEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 577709A02F48602500B04968 /* GAHRiskEngine.framework */; };
+		577709A22F48602500B04968 /* GAHRiskEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 577709A02F48602500B04968 /* GAHRiskEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		577709A42F48651600B04968 /* gemalto_Demo_server.cer in Resources */ = {isa = PBXBuildFile; fileRef = 577709A32F48651600B04968 /* gemalto_Demo_server.cer */; };
 		578A946D2EB2446D00C10448 /* PendingTransactionConfirmationSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578A946C2EB2446D00C10448 /* PendingTransactionConfirmationSheet.swift */; };
 		578A946F2EB48E9A00C10448 /* ShowcaseApp+PersistenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578A946E2EB48E9A00C10448 /* ShowcaseApp+PersistenceStore.swift */; };
 		578A94712EB4942400C10448 /* KeyValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578A94702EB4942400C10448 /* KeyValueStore.swift */; };
@@ -100,7 +113,11 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				577709A22F48602500B04968 /* GAHRiskEngine.framework in Embed Frameworks */,
 				57AE06712D92986B004A3CB9 /* Swinject.xcframework in Embed Frameworks */,
+				5777098B2F47165D00B04968 /* TMXBehavioSec.framework in Embed Frameworks */,
+				577709892F47165D00B04968 /* TMXProfiling.framework in Embed Frameworks */,
+				577709872F47165D00B04968 /* TMXProfilingConnections.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -120,6 +137,14 @@
 		5748DC4D2E447EF000B860D3 /* ShowcaseApp+ViewRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShowcaseApp+ViewRouting.swift"; sourceTree = "<group>"; };
 		5748DC512E449CA100B860D3 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		5774538B2E8E7D50007864DE /* MobileAuthRequestInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileAuthRequestInteractor.swift; sourceTree = "<group>"; };
+		577709832F47165D00B04968 /* TMXProfilingConnections.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TMXProfilingConnections.framework; path = "SDK Showcase/Supporting Files/TMXProfilingConnections.framework"; sourceTree = "<group>"; };
+		577709842F47165D00B04968 /* TMXProfiling.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TMXProfiling.framework; path = "SDK Showcase/Supporting Files/TMXProfiling.framework"; sourceTree = "<group>"; };
+		577709852F47165D00B04968 /* TMXBehavioSec.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TMXBehavioSec.framework; path = "SDK Showcase/Supporting Files/TMXBehavioSec.framework"; sourceTree = "<group>"; };
+		5777098C2F4717B600B04968 /* GAHRiskEngineIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAHRiskEngineIntegration.swift; sourceTree = "<group>"; };
+		5777098E2F4748C100B04968 /* tmx_rnd_gemaltodigitalbankingidcloud_com.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = tmx_rnd_gemaltodigitalbankingidcloud_com.cer; sourceTree = "<group>"; };
+		577709922F4749DF00B04968 /* base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = base.xcconfig; sourceTree = "<group>"; };
+		577709A02F48602500B04968 /* GAHRiskEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GAHRiskEngine.framework; path = "SDK Showcase/Supporting Files/GAHRiskEngine.framework"; sourceTree = "<group>"; };
+		577709A32F48651600B04968 /* gemalto_Demo_server.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = gemalto_Demo_server.cer; sourceTree = "<group>"; };
 		578A946C2EB2446D00C10448 /* PendingTransactionConfirmationSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingTransactionConfirmationSheet.swift; sourceTree = "<group>"; };
 		578A946E2EB48E9A00C10448 /* ShowcaseApp+PersistenceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShowcaseApp+PersistenceStore.swift"; sourceTree = "<group>"; };
 		578A94702EB4942400C10448 /* KeyValueStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueStore.swift; sourceTree = "<group>"; };
@@ -190,8 +215,6 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		570AB26A2DA9406400BF2D7F /* SDK ShowcaseTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = "SDK ShowcaseTests";
 			sourceTree = "<group>";
 		};
@@ -210,7 +233,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				57EB52962DF9B7CD0072E496 /* SDKSPM in Frameworks */,
+				577709862F47165D00B04968 /* TMXProfilingConnections.framework in Frameworks */,
+				577709A12F48602500B04968 /* GAHRiskEngine.framework in Frameworks */,
+				5777098A2F47165D00B04968 /* TMXBehavioSec.framework in Frameworks */,
 				57AE06702D92986B004A3CB9 /* Swinject.xcframework in Frameworks */,
+				577709882F47165D00B04968 /* TMXProfiling.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				578BC30A2D4397A700713CF7 /* Interactors.swift */,
+				5777098C2F4717B600B04968 /* GAHRiskEngineIntegration.swift */,
 				578BC30F2D43A5A700713CF7 /* CategoriesInteractor.swift */,
 				57AE06692D8C20F5004A3CB9 /* SDKInteractor.swift */,
 				57CC76782E8BF86C00E7D7B2 /* AuthenticatorInteractor.swift */,
@@ -308,6 +336,8 @@
 		578BC31E2D4A2D5000713CF7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				577709A32F48651600B04968 /* gemalto_Demo_server.cer */,
+				5777098E2F4748C100B04968 /* tmx_rnd_gemaltodigitalbankingidcloud_com.cer */,
 				57BDC97D2E2F9AFA00534D7E /* AppDelegate.swift */,
 				57F464622D3F80DB00C64156 /* SDK_ShowcaseApp.swift */,
 				57F464662D3F80E200C64156 /* Assets.xcassets */,
@@ -318,6 +348,10 @@
 		57AE066E2D92986B004A3CB9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				577709A02F48602500B04968 /* GAHRiskEngine.framework */,
+				577709852F47165D00B04968 /* TMXBehavioSec.framework */,
+				577709842F47165D00B04968 /* TMXProfiling.framework */,
+				577709832F47165D00B04968 /* TMXProfilingConnections.framework */,
 				57AE066F2D92986B004A3CB9 /* Swinject.xcframework */,
 			);
 			name = Frameworks;
@@ -365,6 +399,7 @@
 			isa = PBXGroup;
 			children = (
 				573A59E42F1916E40028067B /* README.md */,
+				577709922F4749DF00B04968 /* base.xcconfig */,
 				57F464612D3F80DB00C64156 /* SDK Showcase */,
 				570AB26A2DA9406400BF2D7F /* SDK ShowcaseTests */,
 				57F464602D3F80DB00C64156 /* Products */,
@@ -500,7 +535,7 @@
 			);
 			mainGroup = 57F464562D3F80DB00C64156;
 			packageReferences = (
-				57EB52942DF9B7CD0072E496 /* XCRemoteSwiftPackageReference "OneWelcome.SDKSPM-dev" */,
+				57EB52942DF9B7CD0072E496 /* XCRemoteSwiftPackageReference "SDKSPM-dev" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 57F464602D3F80DB00C64156 /* Products */;
@@ -518,6 +553,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				577709932F4749DF00B04968 /* base.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,7 +561,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				577709942F474A3C00B04968 /* base.xcconfig in Resources */,
 				57F4646A2D3F80E200C64156 /* Preview Assets.xcassets in Resources */,
+				5777098F2F4748C100B04968 /* tmx_rnd_gemaltodigitalbankingidcloud_com.cer in Resources */,
+				577709A42F48651600B04968 /* gemalto_Demo_server.cer in Resources */,
 				57F464672D3F80E200C64156 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -575,6 +614,7 @@
 				57E9E1422DB7AE8700168A93 /* BrowserViewModel.swift in Sources */,
 				57E9E13C2DB271AA00168A93 /* SheetViewForWebView.swift in Sources */,
 				9E72F91B2E1E9D1900FB4637 /* UserState.swift in Sources */,
+				5777098D2F4717B600B04968 /* GAHRiskEngineIntegration.swift in Sources */,
 				57BDC9A52E2FB3B600534D7E /* EnrollmentState.swift in Sources */,
 				57CC76332E868D6C00E7D7B2 /* DummyData.swift in Sources */,
 				57CC76792E8BF86C00E7D7B2 /* AuthenticatorInteractor.swift in Sources */,
@@ -628,6 +668,7 @@
 /* Begin XCBuildConfiguration section */
 		570AB26F2DA9406400BF2D7F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 577709922F4749DF00B04968 /* base.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -664,6 +705,7 @@
 		};
 		57F4646B2D3F80E200C64156 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 577709922F4749DF00B04968 /* base.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -786,6 +828,7 @@
 		};
 		57F4646E2D3F80E200C64156 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 577709922F4749DF00B04968 /* base.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -797,12 +840,23 @@
 				ENABLE_CODE_COVERAGE = NO;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SDK\\ Showcase/Supporting\\ Files",
+					"$(PROJECT_DIR)/SDK\\ Showcase/Supporting\\ Files",
+					"$(PROJECT_DIR)/SDK\\ Showcase/Supporting\\ Files",
+					"$(PROJECT_DIR)/SDK\\ Showcase/Supporting\\ Files",
+					"$(PROJECT_DIR)/SDK\\ Showcase/Supporting\\ Files",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SDK-Showcase-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera is required to use QR code registration";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "FaceID is used for an optional biometric authentication";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Need User Permission always and when in use";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Need User Permission when in use";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
@@ -836,12 +890,23 @@
 				ENABLE_CODE_COVERAGE = NO;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SDK\\ Showcase/Supporting\\ Files",
+					"$(PROJECT_DIR)/SDK\\ Showcase/Supporting\\ Files",
+					"$(PROJECT_DIR)/SDK\\ Showcase/Supporting\\ Files",
+					"$(PROJECT_DIR)/SDK\\ Showcase/Supporting\\ Files",
+					"$(PROJECT_DIR)/SDK\\ Showcase/Supporting\\ Files",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SDK-Showcase-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera is required to use QR code registration";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "FaceID is used for an optional biometric authentication";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Need User Permission always and when in use";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Need User Permission when in use";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
@@ -895,7 +960,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		57EB52942DF9B7CD0072E496 /* XCRemoteSwiftPackageReference "OneWelcome.SDKSPM-dev" */ = {
+		57EB52942DF9B7CD0072E496 /* XCRemoteSwiftPackageReference "SDKSPM-dev" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "OneWelcome.SDKSPM-dev";
 			requirement = {
@@ -908,7 +973,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		57EB52952DF9B7CD0072E496 /* SDKSPM */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 57EB52942DF9B7CD0072E496 /* XCRemoteSwiftPackageReference "OneWelcome.SDKSPM-dev" */;
+			package = 57EB52942DF9B7CD0072E496 /* XCRemoteSwiftPackageReference "SDKSPM-dev" */;
 			productName = SDKSPM;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -1,0 +1,23 @@
+SUPPORTS_MACCATALYST    = NO
+ENABLE_BITCODE          = NO
+VALIDATE_WORKSPACE      = NO
+FRAMEWORK_SEARCH_PATHS  = $(inherited) $(SRCROOT)/dependencies $(SRCROOT)/dependencies/$(CONFIGURATION)
+FRAMEWORK_SEARCH_PATHS  = $(inherited) $(TXMPROFILING_PATH) $(TXMBEHAVIOSEC_PATH) $(TXMPROFILING_CONNECTIONS_PATH) $(RISK_ENGINE)
+LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/Frameworks
+OTHER_LDFLAGS           = $(inherited) -ObjC -all_load -lc++
+
+//TMXProfiling
+TXMPROFILING_PATH[sdk=iphoneos*] = $(SRCROOT)/dependencies/$(CONFIGURATION)/TMXProfiling.xcframework/ios-arm64
+TXMPROFILING_PATH[sdk=iphonesimulator*] = $(SRCROOT)/dependencies/$(CONFIGURATION)/TMXProfiling.xcframework/ios-arm64_x86_64-simulator
+
+//TMXProfiling
+TXMBEHAVIOSEC_PATH[sdk=iphoneos*] = $(SRCROOT)/dependencies/$(CONFIGURATION)/TMXBehavioSec.xcframework/ios-arm64
+TXMBEHAVIOSEC_PATH[sdk=iphonesimulator*] = $(SRCROOT)/dependencies/$(CONFIGURATION)/TMXBehavioSec.xcframework/ios-arm64_x86_64-simulator
+
+//TMXProfilingConnections
+TXMPROFILING_CONNECTIONS_PATH[sdk=iphoneos*] = $(SRCROOT)/dependencies/$(CONFIGURATION)/TMXProfilingConnections.xcframework/ios-arm64
+TXMPROFILING_CONNECTIONS_PATH[sdk=iphonesimulator*] = $(SRCROOT)/dependencies/$(CONFIGURATION)/TMXProfilingConnections.xcframework/ios-arm64_x86_64-simulator
+
+//GAHRiskEngine
+RISK_ENGINE[sdk=iphoneos*] = $(SRCROOT)/dependencies/$(CONFIGURATION)/GAHRiskEngine.xcframework/ios-arm64
+RISK_ENGINE[sdk=iphonesimulator*] = $(SRCROOT)/dependencies/$(CONFIGURATION)/GAHRiskEngine.xcframework/ios-arm64_x86_64-simulator

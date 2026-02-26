@@ -27,7 +27,8 @@ class SDKInteractorReal: SDKInteractor {
     private var device: ShowcaseApp.DeviceData { app.deviceData }
     private var client: Client?
     var builder: ClientBuilder
-
+    let integrator = GAHRiskEngineIntegration()
+    
     init(app: ShowcaseApp, client: Client? = nil, builder: ClientBuilder = SDKInteractorReal.staticBuilder) {
         self.app = app
         self.client = client
@@ -39,7 +40,10 @@ class SDKInteractorReal: SDKInteractor {
             app.setSystemInfo(string: "SDK is already initialized.")
             return
         }
-
+        
+        // IFP SDK Integration
+        integrator.startPrefetchingCollection()
+        
         builder.buildAndWaitForProtectedData { client in
             client.start { [self] error in
                 if let error {
