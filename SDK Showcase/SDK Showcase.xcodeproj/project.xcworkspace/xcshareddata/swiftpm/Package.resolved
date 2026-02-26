@@ -2,11 +2,20 @@
   "originHash" : "e2f11b91bacd055baffc7ca754de1133122d6587791286cbac48ea7bf4d05167",
   "pins" : [
     {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire.git",
+      "state" : {
+        "revision" : "513364f870f6bfc468f9d2ff0a95caccc10044c5",
+        "version" : "5.10.2"
+      }
+    },
+    {
       "identity" : "OneWelcome.SDKDependencies",
       "kind" : "registry",
       "location" : "",
       "state" : {
-        "version" : "2.0.0"
+        "version" : "3.0.0"
       }
     },
     {
@@ -14,7 +23,7 @@
       "kind" : "registry",
       "location" : "",
       "state" : {
-        "version" : "13.0.0"
+        "version" : "13.0.2"
       }
     }
   ],
