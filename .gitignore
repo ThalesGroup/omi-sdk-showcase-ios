@@ -5,3 +5,7 @@ SDK Showcase/Pods
 SDK Showcase/Podfile
 SDK Showcase/Podfile.lock
 SDK Showcase/SDK Showcase.xcworkspace
+SDK Showcase/SDK Showcase/Supporting Files/GAHRiskEngine.framework
+SDK Showcase/SDK Showcase/Supporting Files/TMXProfiling.framework
+SDK Showcase/SDK Showcase/Supporting Files/TMXProfilingConnections.framework
+SDK Showcase/SDK Showcase/Supporting Files/TMXBehavioSec.framework

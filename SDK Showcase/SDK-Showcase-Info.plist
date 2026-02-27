@@ -37,5 +37,13 @@
 		<key>UIImageName</key>
 		<string>AppLogo</string>
 	</dict>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>description</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>description</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>description</string>
+	<key>NSLocationUsageDescription</key>
+	<string>description</string>
 </dict>
 </plist>

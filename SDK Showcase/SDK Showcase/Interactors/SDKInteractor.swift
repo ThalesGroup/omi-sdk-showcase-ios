@@ -36,14 +36,13 @@ class SDKInteractorReal: SDKInteractor {
     }
     
     func initializeSDK(result: @escaping SDKResult) {
+        integrator.startPrefetchingCollection()
+        
         guard !app.system.isSDKInitialized else {
             app.setSystemInfo(string: "SDK is already initialized.")
             return
         }
-        
-        // IFP SDK Integration
-        integrator.startPrefetchingCollection()
-        
+
         builder.buildAndWaitForProtectedData { client in
             client.start { [self] error in
                 if let error {

@@ -25,9 +25,13 @@
 
 import Foundation
 import CommonCrypto
+import CoreLocation
 import GAHRiskEngine
 
-class GAHRiskEngineIntegration: NSObject {
+class GAHRiskEngineIntegration: NSObject, CLLocationManagerDelegate {
+    
+    private let locationManager = CLLocationManager()
+    
     /**
      * STEP 1: Create Configuration objects
      * STEP 2 : Initialize GAHRiskEngine
@@ -35,6 +39,9 @@ class GAHRiskEngineIntegration: NSObject {
      */
     override init() {
         super.init()
+        
+        locationManager.delegate = self
+        
         /*Set EAH Backend URL*/
         let bundle:Bundle = Bundle.init(for: GAHRiskEngineIntegration.self)
         let path:String = bundle.path(forResource: "Info", ofType: "plist")!
@@ -99,10 +106,64 @@ class GAHRiskEngineIntegration: NSObject {
      */
     
     func startPrefetchingCollection() {
+        let status = locationManager.authorizationStatus
         
-        /* Fire off the startPrefetchingCollections request. */
-        GAHCore.startPrefetchSignals()
+        switch status {
+        case .notDetermined:
+            locationManager.distanceFilter = kCLDistanceFilterNone
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.requestWhenInUseAuthorization()
+        case .authorizedWhenInUse:
+            locationManager.requestAlwaysAuthorization()
+        case .authorizedAlways:
+            // Authorization always granted, safe to proceed
+            GAHCore.startPrefetchSignals()
+            
+            checkIn5()
+        case .denied, .restricted:
+            // Location not available, but still call prefetch (it may work without location)
+            break
+        @unknown default:
+            break
+        }
     }
+    
+    func checkIn5() {
+        // check profile status of ThreatMetrxi by calling below method
+        //This API will give profile status immedialty if ThreatMetrix is completed else call back will come after 5 seconds with status
+        DispatchQueue.global(qos: .background).asyncAfter(deadline: .now() + 5, execute: { [weak self] in
+            self?.signalPrefetchStatus { (statusCode, statusMessage) in
+                print("requestPrefetchStatus response from GAH is statusCode == ",statusCode, "and StatusMessage == ",statusMessage!)
+
+                DispatchQueue.main.async {
+                    if statusCode == PREFETCH_STATUS_OK {
+                        print("PREFETCH_STATUS_OK")
+                    } else {
+                        print("PREFETCH_STATUS_NOK")
+                    }
+                    self?.step7()
+                }
+            }
+        })
+    }
+    
+    func step7() {
+        requestVisitID(succesHandler: { (visitId) in
+            print("response from GAHSDK == \(self.requestJson())")
+            print("Request complete, go ahead with login immediately")
+        }) { (errorCode, errorMessage) in
+            print("error: \(errorMessage)")
+        }
+    }
+    
+    // MARK: - CLLocationManagerDelegate
+    
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+ 
+        // Now that authorization status has been determined, start prefetch
+        startPrefetchingCollection()
+    }
+ 
     
     /**
      * STEP5: Request for signal prefetch status

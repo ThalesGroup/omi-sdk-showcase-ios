@@ -855,6 +855,7 @@
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "FaceID is used for an optional biometric authentication";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Need User Permission always and when in use";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Need User Permission when in use";
+				INFOPLIST_KEY_NSMotionUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -905,6 +906,7 @@
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "FaceID is used for an optional biometric authentication";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Need User Permission always and when in use";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Need User Permission when in use";
+				INFOPLIST_KEY_NSMotionUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
