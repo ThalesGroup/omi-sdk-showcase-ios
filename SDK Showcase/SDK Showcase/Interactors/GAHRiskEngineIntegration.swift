@@ -60,7 +60,7 @@ class GAHRiskEngineIntegration: NSObject, CLLocationManagerDelegate {
         let ftpServer:String = signalConnectionDict.value(forKey: "FTPServer") as! String
         let tmxConfig:GAHTMXConfig = GAHTMXConfig.sharedConfiguration(withOrgID: orgID, andFingerprintServer: ftpServer)
         
-        let tmxValidCertificatePath = Bundle.main.url(forResource: "tmx_rnd_gemaltodigitalbankingidcloud_com", withExtension: "cer")
+        let tmxValidCertificatePath = Bundle.main.url(forResource: "h-sdk.online-metrix.net", withExtension: "cer")
         let tmxValidCertificateData = NSData.init(contentsOf: tmxValidCertificatePath!)! as Data
 
         let profilingConnections : TMXProfilingConnections = TMXProfilingConnections.init()

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4DE4A9BE2F5335B20071CBCF /* h-sdk.online-metrix.net.cer in Resources */ = {isa = PBXBuildFile; fileRef = 4DE4A9BD2F5335B20071CBCF /* h-sdk.online-metrix.net.cer */; };
 		57005ABF2E29054800BBE63A /* ContentView+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57005ABE2E29054800BBE63A /* ContentView+Actions.swift */; };
 		57005AE52E2A2AF400BBE63A /* PushNotitificationsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57005AE42E2A2AE200BBE63A /* PushNotitificationsInteractor.swift */; };
 		570AB2642DA90CD400BF2D7F /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570AB2632DA90CD400BF2D7F /* Binding.swift */; };
@@ -24,7 +25,6 @@
 		5777098A2F47165D00B04968 /* TMXBehavioSec.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 577709852F47165D00B04968 /* TMXBehavioSec.framework */; };
 		5777098B2F47165D00B04968 /* TMXBehavioSec.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 577709852F47165D00B04968 /* TMXBehavioSec.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5777098D2F4717B600B04968 /* GAHRiskEngineIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5777098C2F4717B600B04968 /* GAHRiskEngineIntegration.swift */; };
-		5777098F2F4748C100B04968 /* tmx_rnd_gemaltodigitalbankingidcloud_com.cer in Resources */ = {isa = PBXBuildFile; fileRef = 5777098E2F4748C100B04968 /* tmx_rnd_gemaltodigitalbankingidcloud_com.cer */; };
 		577709932F4749DF00B04968 /* base.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 577709922F4749DF00B04968 /* base.xcconfig */; };
 		577709942F474A3C00B04968 /* base.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 577709922F4749DF00B04968 /* base.xcconfig */; };
 		577709A12F48602500B04968 /* GAHRiskEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 577709A02F48602500B04968 /* GAHRiskEngine.framework */; };
@@ -125,6 +125,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4DE4A9BD2F5335B20071CBCF /* h-sdk.online-metrix.net.cer */ = {isa = PBXFileReference; lastKnownFileType = file; name = "h-sdk.online-metrix.net.cer"; path = "SDK Showcase/Supporting Files/h-sdk.online-metrix.net.cer"; sourceTree = "<group>"; };
 		57005ABE2E29054800BBE63A /* ContentView+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView+Actions.swift"; sourceTree = "<group>"; };
 		57005AE42E2A2AE200BBE63A /* PushNotitificationsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotitificationsInteractor.swift; sourceTree = "<group>"; };
 		570AB2632DA90CD400BF2D7F /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
@@ -398,6 +399,7 @@
 		57F464562D3F80DB00C64156 = {
 			isa = PBXGroup;
 			children = (
+				4DE4A9BD2F5335B20071CBCF /* h-sdk.online-metrix.net.cer */,
 				573A59E42F1916E40028067B /* README.md */,
 				577709922F4749DF00B04968 /* base.xcconfig */,
 				57F464612D3F80DB00C64156 /* SDK Showcase */,
@@ -563,7 +565,7 @@
 			files = (
 				577709942F474A3C00B04968 /* base.xcconfig in Resources */,
 				57F4646A2D3F80E200C64156 /* Preview Assets.xcassets in Resources */,
-				5777098F2F4748C100B04968 /* tmx_rnd_gemaltodigitalbankingidcloud_com.cer in Resources */,
+				4DE4A9BE2F5335B20071CBCF /* h-sdk.online-metrix.net.cer in Resources */,
 				577709A42F48651600B04968 /* gemalto_Demo_server.cer in Resources */,
 				57F464672D3F80E200C64156 /* Assets.xcassets in Resources */,
 			);
