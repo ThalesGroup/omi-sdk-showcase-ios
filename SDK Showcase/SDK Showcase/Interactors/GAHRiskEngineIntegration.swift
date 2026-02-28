@@ -130,6 +130,29 @@ class GAHRiskEngineIntegration: NSObject, CLLocationManagerDelegate {
     
     func ifpLogin() {
        print("IFP LOGIN NOW")
+        
+        let webManager = REWebServiceManager()
+        GAHCore.requestVisitID { visitId in
+            guard let visitId = visitId else {
+                fatalError("NO VISIT ID")
+            }
+            let loginUrl = "https://demo-ebanking.rnd.gemaltodigitalbankingidcloud.com/api/v1/tenants/cloudtenant/visits/\(visitId)/login"
+            print(loginUrl)
+            
+            let json = [
+                "step": "userIdAndPassword",
+                "userId": "testUser",
+                "password": "pwd",
+                "actionId": UIDevice.current.identifierForVendor!.uuidString,
+                "actionToUse": "getDecision"
+            ]
+            let jsonData = try! JSONSerialization.data(withJSONObject: json)
+            webManager.executeHTTPPost(loginUrl,
+                                       json: jsonData)
+        } failure: { errorCode, errorMessage in
+            print("Failed to get visitId with errorCode: \(errorCode), \(errorMessage ?? "")")
+        }
+
     }
     
     func checkIn5() {

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4DE4A9BE2F5335B20071CBCF /* h-sdk.online-metrix.net.cer in Resources */ = {isa = PBXBuildFile; fileRef = 4DE4A9BD2F5335B20071CBCF /* h-sdk.online-metrix.net.cer */; };
+		4DE4A9CC2F5339700071CBCF /* REWebServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE4A9CB2F5339700071CBCF /* REWebServiceManager.swift */; };
 		57005ABF2E29054800BBE63A /* ContentView+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57005ABE2E29054800BBE63A /* ContentView+Actions.swift */; };
 		57005AE52E2A2AF400BBE63A /* PushNotitificationsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57005AE42E2A2AE200BBE63A /* PushNotitificationsInteractor.swift */; };
 		570AB2642DA90CD400BF2D7F /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570AB2632DA90CD400BF2D7F /* Binding.swift */; };
@@ -126,6 +127,7 @@
 
 /* Begin PBXFileReference section */
 		4DE4A9BD2F5335B20071CBCF /* h-sdk.online-metrix.net.cer */ = {isa = PBXFileReference; lastKnownFileType = file; name = "h-sdk.online-metrix.net.cer"; path = "SDK Showcase/Supporting Files/h-sdk.online-metrix.net.cer"; sourceTree = "<group>"; };
+		4DE4A9CB2F5339700071CBCF /* REWebServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = REWebServiceManager.swift; sourceTree = "<group>"; };
 		57005ABE2E29054800BBE63A /* ContentView+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView+Actions.swift"; sourceTree = "<group>"; };
 		57005AE42E2A2AE200BBE63A /* PushNotitificationsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotitificationsInteractor.swift; sourceTree = "<group>"; };
 		570AB2632DA90CD400BF2D7F /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 			children = (
 				578BC30A2D4397A700713CF7 /* Interactors.swift */,
 				5777098C2F4717B600B04968 /* GAHRiskEngineIntegration.swift */,
+				4DE4A9CB2F5339700071CBCF /* REWebServiceManager.swift */,
 				578BC30F2D43A5A700713CF7 /* CategoriesInteractor.swift */,
 				57AE06692D8C20F5004A3CB9 /* SDKInteractor.swift */,
 				57CC76782E8BF86C00E7D7B2 /* AuthenticatorInteractor.swift */,
@@ -586,6 +589,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57E9E13A2DB2484D00168A93 /* RegistrationInteractor.swift in Sources */,
+				4DE4A9CC2F5339700071CBCF /* REWebServiceManager.swift in Sources */,
 				578DC4ED2D9FDC83008D2576 /* ActionView.swift in Sources */,
 				57EB55E72E03E4D10072E496 /* SheetViewForPinPad.swift in Sources */,
 				578A94712EB4942400C10448 /* KeyValueStore.swift in Sources */,
