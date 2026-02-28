@@ -26,7 +26,7 @@ class CategoriesInteractorReal: CategoriesInteractor {
                                       logo: "figure.run"),
                                Option(name: Options.autoinitialize.rawValue,
                                                 logo: "autostartstop"),
-                               Option(name: Options.reset.rawValue)],
+                               Option(name: Options.ifpLogin.rawValue)],
                      selections: [],
                      requiredActions: [Action(name: "setConfigModel",
                                               description: "Sets config model"),

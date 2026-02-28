@@ -128,6 +128,10 @@ class GAHRiskEngineIntegration: NSObject, CLLocationManagerDelegate {
         }
     }
     
+    func ifpLogin() {
+       print("IFP LOGIN NOW")
+    }
+    
     func checkIn5() {
         // check profile status of ThreatMetrxi by calling below method
         //This API will give profile status immedialty if ThreatMetrix is completed else call back will come after 5 seconds with status

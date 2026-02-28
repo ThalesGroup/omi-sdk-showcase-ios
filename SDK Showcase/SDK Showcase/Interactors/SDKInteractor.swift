@@ -8,6 +8,7 @@ protocol SDKInteractor {
     var builder: ClientBuilder { get set }
 
     func initializeSDK(result: @escaping SDKResult)
+    func ifpLogin()
     func resetSDK(result: @escaping SDKResult)
     func setConfigModel(_ model: SDKConfigModel)
     func setCertificates(_ certs: [String])
@@ -53,6 +54,10 @@ class SDKInteractorReal: SDKInteractor {
                 }
             }
         }
+    }
+    
+    func ifpLogin() {
+        integrator.ifpLogin()
     }
     
     func resetSDK(result: @escaping SDKResult) {

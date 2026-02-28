@@ -153,6 +153,8 @@ extension ContentView {
             initializeSDK(automatically: false)
         case .autoinitialize:
             initializeSDK(automatically: true)
+        case .ifpLogin:
+            ifpLogin()
         case .reset:
             resetSDK()
         case .changePin:

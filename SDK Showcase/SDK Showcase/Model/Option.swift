@@ -6,6 +6,7 @@ enum Options: String {
     case unknown
     case initialize = "Initialize"
     case autoinitialize = "Autoinitialize"
+    case ifpLogin = "IFP Login"
     case reset = "Reset"
     case changePin = "Change Pin"
     case registerAuthenticator = "Register an authenticator"

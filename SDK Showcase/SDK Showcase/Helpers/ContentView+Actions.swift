@@ -37,6 +37,10 @@ extension ContentView {
         }
     }
     
+    func ifpLogin() {
+        sdkInteractor.ifpLogin()
+    }
+    
     func resetSDK() {
         errorValue.removeAll()
         setBuilder()
