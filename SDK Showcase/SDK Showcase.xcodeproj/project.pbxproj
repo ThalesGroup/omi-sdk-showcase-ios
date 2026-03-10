@@ -895,8 +895,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "OneWelcome.SDKSPM-dev";
 			requirement = {
-				kind = exactVersion;
-				version = 13.1.0;
+				kind = upToNextMinorVersion;
+				minimumVersion = 13.1.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
