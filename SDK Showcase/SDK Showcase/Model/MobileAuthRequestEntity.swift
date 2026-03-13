@@ -5,6 +5,7 @@ import OneginiSDKiOS
 enum MobileAuthAuthenticatorType: String {
     case biometric = "biometric"
     case pin = "PIN"
+    case custom = "custom"
     case confirmation = ""
 }
 

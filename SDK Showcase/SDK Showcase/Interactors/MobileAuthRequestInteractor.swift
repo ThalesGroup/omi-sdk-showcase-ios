@@ -136,8 +136,10 @@ class MobileAuthRequestInteractorReal: MobileAuthRequestInteractor {
             entityToBeConfirmed = nil
             return
         }
-            
-        if let pinChallenge = entity.pinChallenge {
+        
+        switch entity.authenticatorType {
+        case .pin:
+            guard let pinChallenge = entity.pinChallenge else { return }
             if transaction.isConfirmed {
                 pinPadInteractor.setPinChallenge(pinChallenge)
                 pinPadInteractor.showPinPad(for: .authenticating)
@@ -146,8 +148,8 @@ class MobileAuthRequestInteractorReal: MobileAuthRequestInteractor {
                 app.removePendingTransaction(transactionId: transactionId)
                 entityToBeConfirmed = nil
             }
-        }
-        else if let biometricChallenge = entity.biometricChallenge {
+        case .biometric:
+            guard let biometricChallenge = entity.biometricChallenge else { return }
             if transaction.isConfirmed {
                 biometricChallenge.sender.respond(with: "User authentication", to: biometricChallenge)
             } else {
@@ -155,8 +157,16 @@ class MobileAuthRequestInteractorReal: MobileAuthRequestInteractor {
                 app.removePendingTransaction(transactionId: transactionId)
                 entityToBeConfirmed = nil
             }
-        }
-        else {
+        case .custom:
+            guard let customAuthChallenge = entity.customAuthChallenge else { return }
+            if transaction.isConfirmed {
+                customAuthChallenge.sender.respond(with: entity.data, to: customAuthChallenge)
+            } else {
+                customAuthChallenge.sender.cancel(customAuthChallenge, underlyingError: customAuthChallenge.error)
+                app.removePendingTransaction(transactionId: transactionId)
+                entityToBeConfirmed = nil
+            }
+        default:
             app.setSystemInfo(string: "The transaction should be authenticated first.")
         }
     }
@@ -221,6 +231,18 @@ private extension MobileAuthRequestInteractorReal {
 }
     
 extension MobileAuthRequestInteractorReal: MobileAuthRequestDelegate {
+    func userClient(_ userClient: any UserClient, didReceiveCustomAuthFinishAuthenticationChallenge challenge: any CustomAuthFinishAuthenticationChallenge, for request: any MobileAuthRequest) {
+        let mobileAuthEntity = MobileAuthRequestEntity()
+        mobileAuthEntity.message = request.message
+        mobileAuthEntity.transactionId = request.transactionId
+        mobileAuthEntity.userProfile = request.userProfile
+        mobileAuthEntity.authenticatorType = .custom
+        mobileAuthEntity.customAuthChallenge = challenge
+        mobileAuthEntity.data = DummyData.customAuthFinishRegistrationChallenge
+
+        confirmTransaction(for: mobileAuthEntity, automatically: false)
+    }
+    
     func userClient(_ userClient: UserClient, didReceiveConfirmation confirmation: @escaping (Bool) -> Void, for request: MobileAuthRequest) {
         let mobileAuthEntity = MobileAuthRequestEntity()
         mobileAuthEntity.message = request.message

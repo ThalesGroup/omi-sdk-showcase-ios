@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		39EBDDB3AB79BFD567084231 /* OneginiConfigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F1825C6D9C15E92CCC9277 /* OneginiConfigModel.m */; };
 		57005ABF2E29054800BBE63A /* ContentView+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57005ABE2E29054800BBE63A /* ContentView+Actions.swift */; };
 		57005AE52E2A2AF400BBE63A /* PushNotitificationsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57005AE42E2A2AE200BBE63A /* PushNotitificationsInteractor.swift */; };
 		570AB2642DA90CD400BF2D7F /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570AB2632DA90CD400BF2D7F /* Binding.swift */; };
@@ -75,12 +74,13 @@
 		57F4646A2D3F80E200C64156 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57F464692D3F80E200C64156 /* Preview Assets.xcassets */; };
 		57F4647B2D43831700C64156 /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F4647A2D43831700C64156 /* Injection.swift */; };
 		57F464822D4383C000C64156 /* ShowcaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F464812D4383C000C64156 /* ShowcaseApp.swift */; };
-		7054C68337E3C8C84722C316 /* OneginiConfigModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 899A1682FE83CCAF521B6447 /* OneginiConfigModel.h */; };
 		9E3523892E31950E00975920 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3523882E31950E00975920 /* CameraPreview.swift */; };
 		9E72F91B2E1E9D1900FB4637 /* UserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E72F91A2E1E9D1900FB4637 /* UserState.swift */; };
 		9E72F9552E2ED11700FB4637 /* SheetViewForQRCodeScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E72F9542E2ED11700FB4637 /* SheetViewForQRCodeScanner.swift */; };
 		9E72F9572E2ED13800FB4637 /* QRScannerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E72F9562E2ED13800FB4637 /* QRScannerPresenter.swift */; };
 		9E72F98A2E2FAA3E00FB4637 /* QRScannerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E72F9892E2FAA3E00FB4637 /* QRScannerInteractor.swift */; };
+		A9701E453C9ED52BB3928A3C /* OneginiConfigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA1D8870772940F3B9EA0CD /* OneginiConfigModel.m */; };
+		E1C15C11AE698F0A12E2DB94 /* OneginiConfigModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 73F6CAB2B302D3E22F7D8EBA /* OneginiConfigModel.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +114,7 @@
 		570AB2692DA9406400BF2D7F /* SDK ShowcaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SDK ShowcaseTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5723966D2DB90AB400C8A3B7 /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
 		5730A8C02DC2448200528BC2 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		573A59E42F1916E40028067B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = SOURCE_ROOT; };
 		574269EB2ECC7D0300A48576 /* ResourceInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceInteractor.swift; sourceTree = "<group>"; };
 		574269FF2ECC9A7000A48576 /* Devices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Devices.swift; sourceTree = "<group>"; };
 		5748DC4D2E447EF000B860D3 /* ShowcaseApp+ViewRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShowcaseApp+ViewRouting.swift"; sourceTree = "<group>"; };
@@ -177,18 +178,20 @@
 		57F464692D3F80E200C64156 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		57F4647A2D43831700C64156 /* Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
 		57F464812D4383C000C64156 /* ShowcaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcaseApp.swift; sourceTree = "<group>"; };
-		899A1682FE83CCAF521B6447 /* OneginiConfigModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OneginiConfigModel.h; path = Configuration/OneginiConfigModel.h; sourceTree = "<group>"; };
+		73F6CAB2B302D3E22F7D8EBA /* OneginiConfigModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OneginiConfigModel.h; path = Configuration/OneginiConfigModel.h; sourceTree = "<group>"; };
 		9E3523882E31950E00975920 /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
 		9E72F91A2E1E9D1900FB4637 /* UserState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserState.swift; sourceTree = "<group>"; };
 		9E72F9542E2ED11700FB4637 /* SheetViewForQRCodeScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetViewForQRCodeScanner.swift; sourceTree = "<group>"; };
 		9E72F9562E2ED13800FB4637 /* QRScannerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerPresenter.swift; sourceTree = "<group>"; };
 		9E72F9892E2FAA3E00FB4637 /* QRScannerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerInteractor.swift; sourceTree = "<group>"; };
-		B8F1825C6D9C15E92CCC9277 /* OneginiConfigModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OneginiConfigModel.m; path = Configuration/OneginiConfigModel.m; sourceTree = "<group>"; };
+		AEA1D8870772940F3B9EA0CD /* OneginiConfigModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OneginiConfigModel.m; path = Configuration/OneginiConfigModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		570AB26A2DA9406400BF2D7F /* SDK ShowcaseTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = "SDK ShowcaseTests";
 			sourceTree = "<group>";
 		};
@@ -217,8 +220,8 @@
 		065F9E48627BA8FD210C428B /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				B8F1825C6D9C15E92CCC9277 /* OneginiConfigModel.m */,
-				899A1682FE83CCAF521B6447 /* OneginiConfigModel.h */,
+				AEA1D8870772940F3B9EA0CD /* OneginiConfigModel.m */,
+				73F6CAB2B302D3E22F7D8EBA /* OneginiConfigModel.h */,
 			);
 			name = Configuration;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 		57F464562D3F80DB00C64156 = {
 			isa = PBXGroup;
 			children = (
+				573A59E42F1916E40028067B /* README.md */,
 				57F464612D3F80DB00C64156 /* SDK Showcase */,
 				570AB26A2DA9406400BF2D7F /* SDK ShowcaseTests */,
 				57F464602D3F80DB00C64156 /* Products */,
@@ -416,7 +420,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7054C68337E3C8C84722C316 /* OneginiConfigModel.h in Headers */,
+				E1C15C11AE698F0A12E2DB94 /* OneginiConfigModel.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,7 +500,7 @@
 			);
 			mainGroup = 57F464562D3F80DB00C64156;
 			packageReferences = (
-				57EB52942DF9B7CD0072E496 /* XCRemoteSwiftPackageReference "SDKSPM-dev" */,
+				57EB52942DF9B7CD0072E496 /* XCRemoteSwiftPackageReference "OneWelcome.SDKSPM-dev" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 57F464602D3F80DB00C64156 /* Products */;
@@ -607,7 +611,7 @@
 				5774538C2E8E7D50007864DE /* MobileAuthRequestInteractor.swift in Sources */,
 				57CC76352E86AD7900E7D7B2 /* SDKError.swift in Sources */,
 				57B302F22EF14B770005D7CE /* PromptState.swift in Sources */,
-				39EBDDB3AB79BFD567084231 /* OneginiConfigModel.m in Sources */,
+				A9701E453C9ED52BB3928A3C /* OneginiConfigModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -891,7 +895,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		57EB52942DF9B7CD0072E496 /* XCRemoteSwiftPackageReference "SDKSPM-dev" */ = {
+		57EB52942DF9B7CD0072E496 /* XCRemoteSwiftPackageReference "OneWelcome.SDKSPM-dev" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "OneWelcome.SDKSPM-dev";
 			requirement = {
@@ -904,7 +908,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		57EB52952DF9B7CD0072E496 /* SDKSPM */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 57EB52942DF9B7CD0072E496 /* XCRemoteSwiftPackageReference "SDKSPM-dev" */;
+			package = 57EB52942DF9B7CD0072E496 /* XCRemoteSwiftPackageReference "OneWelcome.SDKSPM-dev" */;
 			productName = SDKSPM;
 		};
 /* End XCSwiftPackageProductDependency section */

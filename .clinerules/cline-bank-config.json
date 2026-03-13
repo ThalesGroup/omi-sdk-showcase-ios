@@ -1,0 +1,40 @@
+{
+  "version": "2.0.0",
+  "setupDate": "2026-02-05T06:46:00Z",
+  "lastUpdate": "2026-02-05T06:46:00Z",
+  "platform": "ios",
+  "platformStatus": "existing",
+  "project": "sdk-showcase",
+  "projectFullName": "SDK Showcase",
+  "projectStatus": "existing",
+  "projectType": "application",
+  "rules": {
+    "common": [],
+    "platform": [
+      "swift-ios-condensed-rules.md",
+      "swiftui-condensed-rules.md"
+    ],
+    "security": []
+  },
+  "workflows": {
+    "global": [],
+    "project": "sdk-showcase",
+    "projectWorkflowsGenerated": false
+  },
+  "fileMapping": {
+    "rules/ios/swift-ios-condensed-rules.md": "Rules/ios/condensed/swift-ios-condensed-rules.md",
+    "rules/ios/swiftui-condensed-rules.md": "Rules/ios/condensed/swiftui-condensed-rules.md",
+    "workflows/project/build-app.md": "Workflows/projects/ios/sdk-showcase/build-app.md",
+    "workflows/project/clean-build.md": "Workflows/projects/ios/sdk-showcase/clean-build.md",
+    "workflows/project/run-quality-checks.md": "Workflows/projects/ios/sdk-showcase/run-quality-checks.md",
+    "workflows/project/run-tests.md": "Workflows/projects/ios/sdk-showcase/run-tests.md",
+    "workflows/project/README.md": "Workflows/projects/ios/sdk-showcase/README.md",
+    "workflows/configuration/cline-bank-setup.md": "Workflows/configuration/cline-bank-setup.md",
+    "workflows/configuration/cline-bank-update.md": "Workflows/configuration/cline-bank-update.md",
+    "workflows/configuration/cline-bank-modify.md": "Workflows/configuration/cline-bank-modify.md",
+    "workflows/configuration/cline-bank-review.md": "Workflows/configuration/cline-bank-review.md"
+  },
+  "submodulePath": "mobile-cline-bank",
+  "requiresRepoUpdate": false,
+  "pendingActions": []
+}
