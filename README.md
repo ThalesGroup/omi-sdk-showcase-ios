@@ -59,15 +59,13 @@ This repository is intended as a companion to the OMI SDK documentation and shou
 ### Setup access to the OneWelcome SPM repository
 The OMI SDK Showcase App includes the SDK as SPM private repository. In order to let SPM download it you need to setup your account details so the SDK can be
 automatically downloaded:
+
 1. Make sure that you have access to the Thales CPL IAM Artifactory repository (thalescpliam.jfrog.io).
-2. Follow [Setting up the project guide](https://thalesdocs.com/oip/omi-sdk/ios-sdk/ios-sdk-setup-project/index.html) in the SDK documentation for instructions on configuring access to the SPM/Cocoapods repository.
-3. Set SPM registry with a following command:
+1. Unzip Swinject.xcframework.zip
+1. Follow [Setting up the project guide](https://thalesdocs.com/oip/omi-sdk/ios-sdk/ios-sdk-setup-project/index.html) in the SDK documentation for instructions on configuring access to the SPM/Cocoapods repository. 
+1. Set SPM registry with a following command:
 
 `swift package-registry set --global https://thalescpliam.jfrog.io/artifactory/api/swift/swift-public --netrc`
 
 ## Providing token server configuration
-The OMI SDK Showcase App is already configured with the backend (Access) out of the box.
-
-### Changing the configuration
-If there is a need to change the token server configuration within the example app it is going to be best to do it using the Onegini SDK Configurator. Follow
-the steps as described in: `https://github.com/ThalesGroup/sdk-configurator`
+Refer to the [Configure the iOS SDK section](https://thalesdocs.com/oip/omi-sdk/ios-sdk/ios-sdk-setup-project/index.html#configure-the-ios-sdk) section to provide the configuration otherwise the Showcase project compiles but will throw exception at the startup. Onegini SDK Configurator is preferable way of configuring the app.
