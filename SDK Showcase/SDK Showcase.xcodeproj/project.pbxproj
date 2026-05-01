@@ -500,7 +500,7 @@
 			);
 			mainGroup = 57F464562D3F80DB00C64156;
 			packageReferences = (
-				57EB52942DF9B7CD0072E496 /* XCRemoteSwiftPackageReference "OneWelcome.SDKSPM-dev" */,
+				57EB52942DF9B7CD0072E496 /* XCRemoteSwiftPackageReference "SDKSPM-dev" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 57F464602D3F80DB00C64156 /* Products */;
@@ -810,7 +810,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.onewelcome.omi.SDK-Showcase";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -849,7 +849,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.onewelcome.omi.SDK-Showcase";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -895,12 +895,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		57EB52942DF9B7CD0072E496 /* XCRemoteSwiftPackageReference "OneWelcome.SDKSPM-dev" */ = {
+		57EB52942DF9B7CD0072E496 /* XCRemoteSwiftPackageReference "SDKSPM-dev" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "OneWelcome.SDKSPM-dev";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 13.0.0;
+				minimumVersion = 13.1.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -908,7 +908,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		57EB52952DF9B7CD0072E496 /* SDKSPM */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 57EB52942DF9B7CD0072E496 /* XCRemoteSwiftPackageReference "OneWelcome.SDKSPM-dev" */;
+			package = 57EB52942DF9B7CD0072E496 /* XCRemoteSwiftPackageReference "SDKSPM-dev" */;
 			productName = SDKSPM;
 		};
 /* End XCSwiftPackageProductDependency section */
