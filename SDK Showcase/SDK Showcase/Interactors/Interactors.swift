@@ -11,4 +11,8 @@ struct Interactors {
     let qrScannerInteractor: QRScannerInteractor
     let pushInteractor: PushNotitificationsInteractor
     let resourceInteractor: ResourceInteractor
+    // POC - Start
+    ///Extension Engine
+    let fidoRegistrationInteractor: Fido2Interactor
+    // POC - End
 }

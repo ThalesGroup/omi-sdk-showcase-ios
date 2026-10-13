@@ -1,6 +1,14 @@
 {
-  "originHash" : "e2f11b91bacd055baffc7ca754de1133122d6587791286cbac48ea7bf4d05167",
+  "originHash" : "2ab9395b3c29edf7810a8f8df843d719b7463c98e9b11047877afd82d3f6c87b",
   "pins" : [
+    {
+      "identity" : "fido2.fido2sdk-dev",
+      "kind" : "registry",
+      "location" : "",
+      "state" : {
+        "version" : "4.1.0"
+      }
+    },
     {
       "identity" : "OneWelcome.SDKDependencies",
       "kind" : "registry",
@@ -14,7 +22,7 @@
       "kind" : "registry",
       "location" : "",
       "state" : {
-        "version" : "13.1.1"
+        "version" : "13.3.1"
       }
     }
   ],

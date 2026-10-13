@@ -15,6 +15,7 @@ protocol PinPadInteractor {
     func cancelChangingPIN()
     func cancelCreatingPIN()
     func didChangePinForUser()
+    func resetChallenges()
 }
 
 //MARK: - Real methods
@@ -98,7 +99,13 @@ class PinPadInteractorReal: PinPadInteractor {
     
     func didChangePinForUser() {
         app.system.setPinPadState(.hidden)
+        resetChallenges()
+    }
+
+    func resetChallenges() {
         pinChallenge = nil
+        createPinChallenge = nil
+        providedPin = nil
     }
 }
 
@@ -166,6 +173,7 @@ extension PinPadInteractorReal: ChangePinDelegate {
     }
 
     func userClient(_ userClient: any UserClient, didFailToChangePinForUser profile: any UserProfile, error: any Error) {
+        resetChallenges()
         app.setSystemInfo(string: error.localizedDescription)
     }
 }

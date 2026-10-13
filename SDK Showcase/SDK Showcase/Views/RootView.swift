@@ -20,16 +20,26 @@ struct RootView: View {
 
     var body: some View {
         ZStack {
-            NavigationStack(path: $app.routing.navPath) {
-                HeaderView()
-                List(interactor.loadCategories()) { category in
-                    NavigationLink(value: category) {
-                        Text(category.name)
+            TabView {
+                NavigationStack(path: $app.routing.navPath) {
+                    HeaderView()
+                    List(interactor.loadCategories()) { category in
+                        NavigationLink(value: category) {
+                            Text(category.name)
+                        }
+                    }
+                    .navigationDestination(for: Category.self) { category in
+                        ContentView(category: category)
                     }
                 }
-                .navigationDestination(for: Category.self) { category in
-                    ContentView(category: category)
+                .tabItem {
+                    Label("Home", systemImage: "house")
                 }
+                
+                InfoView()
+                    .tabItem {
+                        Label("Info", systemImage: "info.circle")
+                    }
             }
             .onAppear {
                 if app.system.autoinitializeSDK {

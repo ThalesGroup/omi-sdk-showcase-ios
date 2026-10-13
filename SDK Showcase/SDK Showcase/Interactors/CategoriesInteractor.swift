@@ -121,7 +121,8 @@ class CategoriesInteractorReal: CategoriesInteractor {
                      selections: [Selection(name: Selections.authenticatedRequest.rawValue),
                                   Selection(name: Selections.implicitRequest.rawValue),
                                   Selection(name: Selections.unauthenticatedRequest.rawValue),
-                                  Selection(name: Selections.anonymousRequest.rawValue)],
+                                  Selection(name: Selections.anonymousRequest.rawValue),
+                                  Selection(name: Selections.multipartRequest.rawValue)],
                      requiredActions: [],
                      optionalActions: []),
 

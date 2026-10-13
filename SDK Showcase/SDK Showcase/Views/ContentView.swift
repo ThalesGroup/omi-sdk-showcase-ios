@@ -19,6 +19,7 @@ struct ContentView: View {
     @State internal var errorValue = ""
     @State internal var showConfirmationDialog = false
     @State internal var selectedOption: Selection?
+    @State internal var showMultipartForm = false
     
     var body: some View {
         HStack {
@@ -99,6 +100,16 @@ struct ContentView: View {
             SheetViewForPrompt()
                 .interactiveDismissDisabled()
         }
+        .sheet(isPresented: $showMultipartForm) {
+            SheetViewForMultipartUpload()
+        }
+        // POC - Start
+        ///Extension Engine
+        .sheet(isPresented: $system.shouldShowFidoChallenge) {
+            FidoChallengeScreenView()
+                .interactiveDismissDisabled()
+        }
+        // POC - End
         .onChange(of: app.registeredUsers) {
             updateUsersSelection()
             updateDeregister()
@@ -123,7 +134,19 @@ struct ContentView: View {
             guard app.system.autoinitializeSDK else { return }
             initializeSDK(automatically: true)
         }
-        
+        // POC - START
+        //  handling universal linik
+        .onContinueUserActivity(NSUserActivityTypeBrowsingWeb) { activity in
+            if let url = activity.webpageURL {
+                print("Universal link:", url)
+                handleURL(url)
+            }
+        }
+        .onOpenURL { url in
+            print("Received url for the first step: \(url)")
+            handleURL(url)
+        }
+        // POC - END
         HStack {
             ForEach(category.options) { option in
                 Button(action: {
@@ -198,6 +221,8 @@ extension ContentView {
             sendImplicitRequest()
         case .anonymousRequest:
             sendAnonymousRequest()
+        case .multipartRequest:
+            showMultipartUploadForm()
         case .unknown:
             fatalError("Selection `\(selection.name)` not handled!")
         }
@@ -215,4 +240,37 @@ extension ContentView {
         }
         return urlStringForWebview
     }
+    // POC - START
+    func handleURL(_ url: URL) {
+        guard let appToAppPayload = url.appToAppJsonString else { return }
+        print("appToAppPayload for second step: \(appToAppPayload)")
+        registrationInteractor.setUserPrompt(appToAppPayload)
+    }
+    // POC - END
 }
+
+// POC - START
+private extension URL {
+    private var isDigid: Bool {
+        /* example url:
+         https://genuflecto.github.io/owshowcase?app-app=eyJTQU1MYXJ0IjoiQUFRQUFNb0JLUzY5d0JEaGgzR0NxdWd6S1RFcm1JTkdyTVlLcDk4ZGluVWVPRXBHVDhGRjF0Rm5qYjg9IiwiUmVsYXlTdGF0ZSI6InRzaGs4anl3IiwiRXJyb3JNZXNzYWdlIjpudWxsfQ==
+        */
+        host?.contains("genuflecto") ?? false
+    }
+    
+    private var appToAppJsonData: Data? {
+        /* example:
+         {"SAMLart":"AAQAAMoBKS69wBDhh3GCqugzKTErmINGrMYKp98dinUeOEpGT8FF1tFnjb8=","RelayState":"tshk8jyw","ErrorMessage":null}
+         */
+        URLComponents(url: self, resolvingAgainstBaseURL: false)?
+            .queryItems?
+            .first(where: { $0.name == "app-app" })?.value
+            .flatMap { Data(base64Encoded: $0) }
+    }
+    
+    var appToAppJsonString: String? {
+        guard isDigid, let appToAppJsonData else { return nil }
+        return String(data: appToAppJsonData, encoding: .utf8)
+    }
+}
+// POC - END

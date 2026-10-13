@@ -194,7 +194,7 @@ class MobileAuthRequestInteractorReal: MobileAuthRequestInteractor {
     }
     
     func precheck() -> Bool {
-        let stateless = userClient.isStateless && userClient.accessToken != nil
+        let stateless = app.system.userState == .stateless
         let check = userClient.authenticatedUserProfile != nil && userClient.accessToken != nil
         
         guard !stateless else {

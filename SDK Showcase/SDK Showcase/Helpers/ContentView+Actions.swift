@@ -20,7 +20,7 @@ extension ContentView {
         app.system.autoinitializeSDK = automatically
         errorValue.removeAll()
         /// You can uncomment the below line if the app is not configured with the configurator and does not have OneginiConfigModel set.
-        //setBuilder()
+        setBuilder()
         sdkInteractor.initializeSDK { result in
             switch result {
             case .success:
@@ -76,6 +76,11 @@ extension ContentView {
     
     func sendImplicitRequest() {
         resourceInteractor.sendImplicitRequest()
+    }
+    
+    func showMultipartUploadForm() {
+        showMultipartForm = true
+        system.isProcessing = false
     }
     
     func enrollForMobileAuthentication() {

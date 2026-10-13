@@ -15,6 +15,7 @@ enum Selections: String {
     case unauthenticatedRequest = "🖥️ Unauthencated request"
     case implicitRequest = "👤 Implicit request"
     case anonymousRequest = "🖥️ Anonymous request"
+    case multipartRequest = "📎 Multipart upload (User Auth)"
 }
 
 struct Selection: AppModel {

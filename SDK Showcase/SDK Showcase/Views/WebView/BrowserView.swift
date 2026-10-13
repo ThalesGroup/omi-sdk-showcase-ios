@@ -47,7 +47,7 @@ struct BrowserWebView: UIViewRepresentable {
         viewModel.webView = webView
         var request = URLRequest(url: url)
         request.timeoutInterval = 10.0
-        webView.load(URLRequest(url: url))
+        webView.load(request)
         return webView
     }
     

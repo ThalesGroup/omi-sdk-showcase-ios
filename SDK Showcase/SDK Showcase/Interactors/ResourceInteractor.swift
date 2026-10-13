@@ -7,6 +7,7 @@ protocol ResourceInteractor {
     /// Requests performed on UserClient
     func sendAuthenticatedRequest()
     func sendImplicitRequest()
+    func sendMultipartUpload(name: String, email: String, fileData: Data, fileName: String)
     
     /// Requests performed on UserDevice
     func sendUnauthenticatedRequest()
@@ -94,6 +95,66 @@ class ResourceInteractorReal: ResourceInteractor {
             }
         }
     }
+    
+    func sendMultipartUpload(name: String, email: String, fileData: Data, fileName: String) {
+        guard userClient.authenticatedUserProfile != nil else {
+            handleData("No authenticated user. Please log in before uploading.")
+            return
+        }
+        guard !fileData.isEmpty else {
+            handleData("Selected file is empty.")
+            return
+        }
+
+        let fields: [MultipartData] = [
+            MultipartField(name: "name",  text: name),
+            MultipartField(name: "email", text: email),
+            MultipartField(name: "attachments",
+                           data: fileData,
+                           fileName: fileName,
+                           mimeType: mimeType(for: fileName))
+        ]
+
+        let request = ResourceRequestFactory.makeMultipartResourceRequest(
+            path: "file-upload",
+            method: .post,
+            parameters: nil,
+            multipartData: fields
+        )
+
+        userClient.sendAuthenticatedRequest(request) { [weak self] response, error in
+            DispatchQueue.main.async {
+                if let error {
+                    self?.handleError(error)
+                    return
+                }
+                guard let response else {
+                    self?.handleData("sendMultipartUpload: no response from SDK.")
+                    return
+                }
+                let statusCode = response.statusCode
+                let bodyString = response.data.flatMap { String(data: $0, encoding: .utf8) } ?? "<non-UTF8 body>"
+                if statusCode == 200 || statusCode == 201 {
+                    self?.handleData("Multipart upload successful!\n\nFile: \(fileName)\nName: \(name)\nEmail: \(email)\n\n\(bodyString)")
+                } else {
+                    let serverError = NSError(domain: "MultipartUpload", code: statusCode,
+                        userInfo: [NSLocalizedDescriptionKey: "Upload failed — HTTP \(statusCode): \(bodyString)"])
+                    self?.handleError(serverError)
+                }
+            }
+        }
+    }
+    
+    private func mimeType(for fileName: String) -> String {
+        let ext = (fileName as NSString).pathExtension.lowercased()
+        switch ext {
+        case "jpg", "jpeg": return "image/jpeg"
+        case "png":         return "image/png"
+        case "pdf":         return "application/pdf"
+        case "txt":         return "text/plain"
+        default:            return "application/octet-stream"
+        }
+    }
 }
 
 private extension ResourceInteractorReal {
@@ -107,5 +168,30 @@ private extension ResourceInteractorReal {
         DispatchQueue.main.async { [app] in
             app.setSystemInfo(string: dataString)
         }
+    }
+}
+
+// MARK: - MultipartData conformance
+
+struct MultipartField: MultipartData {
+    let data: Data
+    let name: String
+    let fileName: String
+    let mimeType: String
+    
+    /// Plain-text form field — no filename, mimeType = text/plain
+    init(name: String, text: String) {
+        self.name = name
+        self.data = Data(text.utf8)
+        self.fileName = ""
+        self.mimeType = "text/plain"
+    }
+    
+    /// Binary / file field
+    init(name: String, data: Data, fileName: String, mimeType: String) {
+        self.name = name
+        self.data = data
+        self.fileName = fileName
+        self.mimeType = mimeType
     }
 }

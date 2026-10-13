@@ -4,5 +4,20 @@
 <dict>
 	<key>aps-environment</key>
 	<string>development</string>
+	<key>com.apple.developer.associated-domains</key>
+	<array>
+		<string>applinks:genuflecto.github.io</string>
+		<string>applinks:www.genuflecto.github.io</string>
+		<string>webcredentials:mobile.in.test.onewelcome.net</string>
+		<string>applinks:mobile.in.test.onewelcome.net</string>
+		<string>webcredentials:mobile.in.prod.onewelcome.net</string>
+		<string>applinks:mobile.in.prod.onewelcome.net</string>
+	</array>
+<!-- POC - Start -->
+	<key>com.apple.security.application-groups</key>
+	<array>
+		<string>group.com.onewelcome.showcase</string>
+	</array>
+<!-- POC - End -->
 </dict>
 </plist>
