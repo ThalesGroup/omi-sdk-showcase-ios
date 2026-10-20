@@ -62,7 +62,6 @@
 		57E9E13E2DB272EA00168A93 /* LoadingWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E9E13D2DB272EA00168A93 /* LoadingWebView.swift */; };
 		57E9E1402DB2734200168A93 /* BrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E9E13F2DB2734200168A93 /* BrowserView.swift */; };
 		57E9E1422DB7AE8700168A93 /* BrowserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E9E1412DB7AE8700168A93 /* BrowserViewModel.swift */; };
-		57EB52962DF9B7CD0072E496 /* SDKSPM in Frameworks */ = {isa = PBXBuildFile; productRef = 57EB52952DF9B7CD0072E496 /* SDKSPM */; };
 		57EB55E32E03E2C50072E496 /* PinPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EB55E22E03E2C50072E496 /* PinPad.swift */; };
 		57EB55E52E03E3420072E496 /* PinPadInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EB55E42E03E3420072E496 /* PinPadInteractor.swift */; };
 		57EB55E72E03E4D10072E496 /* SheetViewForPinPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EB55E62E03E4D10072E496 /* SheetViewForPinPad.swift */; };
@@ -74,13 +73,22 @@
 		57F4646A2D3F80E200C64156 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57F464692D3F80E200C64156 /* Preview Assets.xcassets */; };
 		57F4647B2D43831700C64156 /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F4647A2D43831700C64156 /* Injection.swift */; };
 		57F464822D4383C000C64156 /* ShowcaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F464812D4383C000C64156 /* ShowcaseApp.swift */; };
+		71D9EF8130065778001BC67F /* SheetViewForMultipartUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D9EF8030065778001BC67F /* SheetViewForMultipartUpload.swift */; };
+		9979865A306BA19200459A26 /* SecureLog in Frameworks */ = {isa = PBXBuildFile; productRef = 99798659306BA19200459A26 /* SecureLog */; };
+		9979865C306BA19200459A26 /* fido2 in Frameworks */ = {isa = PBXBuildFile; productRef = 9979865B306BA19200459A26 /* fido2 */; };
+		9979865E306BA19200459A26 /* fido2ui in Frameworks */ = {isa = PBXBuildFile; productRef = 9979865D306BA19200459A26 /* fido2ui */; };
+		99F544FF30248C8900015571 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F544FE30248C8900015571 /* InfoView.swift */; };
+		99F545023024905F00015571 /* SDKSPM in Frameworks */ = {isa = PBXBuildFile; productRef = 99F545013024905F00015571 /* SDKSPM */; };
+		99F63AC12F693EF600142CB3 /* FidoChallengeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F63AC02F693EF600142CB3 /* FidoChallengeScreenView.swift */; };
+		99F63AC32F693F6000142CB3 /* FidoChallengeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F63AC22F693F6000142CB3 /* FidoChallengeState.swift */; };
+		99F63AD12F69700300142CB3 /* Fido2Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F63ACF2F69700300142CB3 /* Fido2Interactor.swift */; };
+		99F63AD22F69700300142CB3 /* FidoUiDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F63AD02F69700300142CB3 /* FidoUiDelegate.swift */; };
+		99F63AE62F6AC83500142CB3 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F63AE52F6AC83500142CB3 /* Configuration.swift */; };
 		9E3523892E31950E00975920 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3523882E31950E00975920 /* CameraPreview.swift */; };
 		9E72F91B2E1E9D1900FB4637 /* UserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E72F91A2E1E9D1900FB4637 /* UserState.swift */; };
 		9E72F9552E2ED11700FB4637 /* SheetViewForQRCodeScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E72F9542E2ED11700FB4637 /* SheetViewForQRCodeScanner.swift */; };
 		9E72F9572E2ED13800FB4637 /* QRScannerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E72F9562E2ED13800FB4637 /* QRScannerPresenter.swift */; };
 		9E72F98A2E2FAA3E00FB4637 /* QRScannerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E72F9892E2FAA3E00FB4637 /* QRScannerInteractor.swift */; };
-		A9701E453C9ED52BB3928A3C /* OneginiConfigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA1D8870772940F3B9EA0CD /* OneginiConfigModel.m */; };
-		E1C15C11AE698F0A12E2DB94 /* OneginiConfigModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 73F6CAB2B302D3E22F7D8EBA /* OneginiConfigModel.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +116,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3A79BB9A7710B89B7C34C7B9 /* OneginiConfigModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OneginiConfigModel.h; path = Configuration/OneginiConfigModel.h; sourceTree = "<group>"; };
+		4CB42BC412F4A8EDA99B34D7 /* OneginiConfigModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OneginiConfigModel.m; path = Configuration/OneginiConfigModel.m; sourceTree = "<group>"; };
 		57005ABE2E29054800BBE63A /* ContentView+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView+Actions.swift"; sourceTree = "<group>"; };
 		57005AE42E2A2AE200BBE63A /* PushNotitificationsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotitificationsInteractor.swift; sourceTree = "<group>"; };
 		570AB2632DA90CD400BF2D7F /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
@@ -178,20 +188,23 @@
 		57F464692D3F80E200C64156 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		57F4647A2D43831700C64156 /* Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
 		57F464812D4383C000C64156 /* ShowcaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcaseApp.swift; sourceTree = "<group>"; };
-		73F6CAB2B302D3E22F7D8EBA /* OneginiConfigModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OneginiConfigModel.h; path = Configuration/OneginiConfigModel.h; sourceTree = "<group>"; };
+		71D9EF8030065778001BC67F /* SheetViewForMultipartUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetViewForMultipartUpload.swift; sourceTree = "<group>"; };
+		99F544FE30248C8900015571 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		99F63AC02F693EF600142CB3 /* FidoChallengeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FidoChallengeScreenView.swift; sourceTree = "<group>"; };
+		99F63AC22F693F6000142CB3 /* FidoChallengeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FidoChallengeState.swift; sourceTree = "<group>"; };
+		99F63ACF2F69700300142CB3 /* Fido2Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fido2Interactor.swift; sourceTree = "<group>"; };
+		99F63AD02F69700300142CB3 /* FidoUiDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FidoUiDelegate.swift; sourceTree = "<group>"; };
+		99F63AE52F6AC83500142CB3 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		9E3523882E31950E00975920 /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
 		9E72F91A2E1E9D1900FB4637 /* UserState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserState.swift; sourceTree = "<group>"; };
 		9E72F9542E2ED11700FB4637 /* SheetViewForQRCodeScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetViewForQRCodeScanner.swift; sourceTree = "<group>"; };
 		9E72F9562E2ED13800FB4637 /* QRScannerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerPresenter.swift; sourceTree = "<group>"; };
 		9E72F9892E2FAA3E00FB4637 /* QRScannerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerInteractor.swift; sourceTree = "<group>"; };
-		AEA1D8870772940F3B9EA0CD /* OneginiConfigModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OneginiConfigModel.m; path = Configuration/OneginiConfigModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		570AB26A2DA9406400BF2D7F /* SDK ShowcaseTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = "SDK ShowcaseTests";
 			sourceTree = "<group>";
 		};
@@ -209,8 +222,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57EB52962DF9B7CD0072E496 /* SDKSPM in Frameworks */,
+				9979865E306BA19200459A26 /* fido2ui in Frameworks */,
+				99F545023024905F00015571 /* SDKSPM in Frameworks */,
+				9979865C306BA19200459A26 /* fido2 in Frameworks */,
 				57AE06702D92986B004A3CB9 /* Swinject.xcframework in Frameworks */,
+				9979865A306BA19200459A26 /* SecureLog in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,8 +236,8 @@
 		065F9E48627BA8FD210C428B /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				AEA1D8870772940F3B9EA0CD /* OneginiConfigModel.m */,
-				73F6CAB2B302D3E22F7D8EBA /* OneginiConfigModel.h */,
+				4CB42BC412F4A8EDA99B34D7 /* OneginiConfigModel.m */,
+				3A79BB9A7710B89B7C34C7B9 /* OneginiConfigModel.h */,
 			);
 			name = Configuration;
 			sourceTree = "<group>";
@@ -229,6 +245,8 @@
 		578BC30E2D43A59000713CF7 /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
+				99F63ACF2F69700300142CB3 /* Fido2Interactor.swift */,
+				99F63AD02F69700300142CB3 /* FidoUiDelegate.swift */,
 				578BC30A2D4397A700713CF7 /* Interactors.swift */,
 				578BC30F2D43A5A700713CF7 /* CategoriesInteractor.swift */,
 				57AE06692D8C20F5004A3CB9 /* SDKInteractor.swift */,
@@ -247,6 +265,7 @@
 		578BC3112D43A5DC00713CF7 /* States */ = {
 			isa = PBXGroup;
 			children = (
+				99F63AC22F693F6000142CB3 /* FidoChallengeState.swift */,
 				57B302F12EF14B740005D7CE /* PromptState.swift */,
 				57CC76762E8BE37F00E7D7B2 /* ScannerState.swift */,
 				57BDC9A42E2FB3AA00534D7E /* EnrollmentState.swift */,
@@ -259,6 +278,7 @@
 		578BC3122D43A60600713CF7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				99F544FE30248C8900015571 /* InfoView.swift */,
 				57F464642D3F80DB00C64156 /* RootView.swift */,
 				5748DC512E449CA100B860D3 /* HeaderView.swift */,
 				578BC3202D4A305C00713CF7 /* ContentView.swift */,
@@ -326,6 +346,7 @@
 		57AE06792D952A29004A3CB9 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				99F63AE52F6AC83500142CB3 /* Configuration.swift */,
 				578A94742EB4A35900C10448 /* Persistence.swift */,
 				578A94702EB4942400C10448 /* KeyValueStore.swift */,
 				578A94722EB4943B00C10448 /* UserDefaultsStore.swift */,
@@ -350,6 +371,8 @@
 		57EB55EA2E0540F10072E496 /* SheetView */ = {
 			isa = PBXGroup;
 			children = (
+				71D9EF8030065778001BC67F /* SheetViewForMultipartUpload.swift */,
+				99F63AC02F693EF600142CB3 /* FidoChallengeScreenView.swift */,
 				578A946C2EB2446D00C10448 /* PendingTransactionConfirmationSheet.swift */,
 				57CC76162E82ABA800E7D7B2 /* AuthenticatorsSheet.swift */,
 				57E9E13B2DB271AA00168A93 /* SheetViewForWebView.swift */,
@@ -420,7 +443,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1C15C11AE698F0A12E2DB94 /* OneginiConfigModel.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,7 +486,10 @@
 			);
 			name = "SDK Showcase";
 			packageProductDependencies = (
-				57EB52952DF9B7CD0072E496 /* SDKSPM */,
+				99F545013024905F00015571 /* SDKSPM */,
+				99798659306BA19200459A26 /* SecureLog */,
+				9979865B306BA19200459A26 /* fido2 */,
+				9979865D306BA19200459A26 /* fido2ui */,
 			);
 			productName = "SDK Showcase";
 			productReference = 57F4645F2D3F80DB00C64156 /* SDK Showcase.app */;
@@ -500,7 +525,8 @@
 			);
 			mainGroup = 57F464562D3F80DB00C64156;
 			packageReferences = (
-				57EB52942DF9B7CD0072E496 /* XCRemoteSwiftPackageReference "SDKSPM-dev" */,
+				99F545003024905F00015571 /* XCRemoteSwiftPackageReference "SDKSPM-dev" */,
+				99798658306BA19200459A26 /* XCRemoteSwiftPackageReference "fido2sdk-dev" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 57F464602D3F80DB00C64156 /* Products */;
@@ -554,6 +580,7 @@
 				57426A002ECC9A7000A48576 /* Devices.swift in Sources */,
 				5748DC4E2E447EF800B860D3 /* ShowcaseApp+ViewRouting.swift in Sources */,
 				57005ABF2E29054800BBE63A /* ContentView+Actions.swift in Sources */,
+				99F63AC12F693EF600142CB3 /* FidoChallengeScreenView.swift in Sources */,
 				57EB55E32E03E2C50072E496 /* PinPad.swift in Sources */,
 				57F4647B2D43831700C64156 /* Injection.swift in Sources */,
 				57005AE52E2A2AF400BBE63A /* PushNotitificationsInteractor.swift in Sources */,
@@ -585,6 +612,7 @@
 				57A5BE002E3B969B0041015B /* PendingMobileAuthRequestEntity.swift in Sources */,
 				578BC3212D4A305C00713CF7 /* ContentView.swift in Sources */,
 				578A946D2EB2446D00C10448 /* PendingTransactionConfirmationSheet.swift in Sources */,
+				71D9EF8130065778001BC67F /* SheetViewForMultipartUpload.swift in Sources */,
 				9E72F9552E2ED11700FB4637 /* SheetViewForQRCodeScanner.swift in Sources */,
 				578BC3102D43A5A700713CF7 /* CategoriesInteractor.swift in Sources */,
 				57AE066A2D8C20F5004A3CB9 /* SDKInteractor.swift in Sources */,
@@ -593,6 +621,9 @@
 				578A94732EB4943B00C10448 /* UserDefaultsStore.swift in Sources */,
 				57A5BDFC2E3B949D0041015B /* MobileAuthRequestEntity.swift in Sources */,
 				57E9E1382DB2426C00168A93 /* Selection.swift in Sources */,
+				99F63AE62F6AC83500142CB3 /* Configuration.swift in Sources */,
+				99F63AD12F69700300142CB3 /* Fido2Interactor.swift in Sources */,
+				99F63AD22F69700300142CB3 /* FidoUiDelegate.swift in Sources */,
 				578A94752EB4A35900C10448 /* Persistence.swift in Sources */,
 				5730A8C12DC2448200528BC2 /* Alert.swift in Sources */,
 				57AE067B2D952A43004A3CB9 /* SDKResult.swift in Sources */,
@@ -605,13 +636,14 @@
 				57A9BBD62EA8B90200BF750B /* Token.swift in Sources */,
 				57B8FA992E17C80B007EBECE /* PinPadState.swift in Sources */,
 				57A5BE022E3B96D60041015B /* MobileAuthRequestQueue.swift in Sources */,
+				99F544FF30248C8900015571 /* InfoView.swift in Sources */,
 				57F464822D4383C000C64156 /* ShowcaseApp.swift in Sources */,
 				57CC76282E86773E00E7D7B2 /* IdentityProviderType.swift in Sources */,
 				9E3523892E31950E00975920 /* CameraPreview.swift in Sources */,
+				99F63AC32F693F6000142CB3 /* FidoChallengeState.swift in Sources */,
 				5774538C2E8E7D50007864DE /* MobileAuthRequestInteractor.swift in Sources */,
 				57CC76352E86AD7900E7D7B2 /* SDKError.swift in Sources */,
 				57B302F22EF14B770005D7CE /* PromptState.swift in Sources */,
-				A9701E453C9ED52BB3928A3C /* OneginiConfigModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -701,7 +733,6 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -791,9 +822,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_ENTITLEMENTS = "SDK Showcase/SDK Showcase.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SDK Showcase/Preview Content\"";
+				DEVELOPMENT_TEAM = FSS5X3XZNY;
 				ENABLE_CODE_COVERAGE = NO;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -810,9 +843,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.onewelcome.omi.SDK-Showcase";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -833,6 +867,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SDK Showcase/Preview Content\"";
+				DEVELOPMENT_TEAM = FSS5X3XZNY;
 				ENABLE_CODE_COVERAGE = NO;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -849,7 +884,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.onewelcome.omi.SDK-Showcase";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -895,20 +930,43 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		57EB52942DF9B7CD0072E496 /* XCRemoteSwiftPackageReference "SDKSPM-dev" */ = {
+		99798658306BA19200459A26 /* XCRemoteSwiftPackageReference "fido2sdk-dev" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "fido2.fido2sdk-dev";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.0;
+			};
+		};
+		99F545003024905F00015571 /* XCRemoteSwiftPackageReference "SDKSPM-dev" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "OneWelcome.SDKSPM-dev";
 			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 13.1.0;
+				kind = upToNextMajorVersion;
+				minimumVersion = 13.3.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		57EB52952DF9B7CD0072E496 /* SDKSPM */ = {
+		99798659306BA19200459A26 /* SecureLog */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 57EB52942DF9B7CD0072E496 /* XCRemoteSwiftPackageReference "SDKSPM-dev" */;
+			package = 99798658306BA19200459A26 /* XCRemoteSwiftPackageReference "fido2sdk-dev" */;
+			productName = SecureLog;
+		};
+		9979865B306BA19200459A26 /* fido2 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99798658306BA19200459A26 /* XCRemoteSwiftPackageReference "fido2sdk-dev" */;
+			productName = fido2;
+		};
+		9979865D306BA19200459A26 /* fido2ui */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99798658306BA19200459A26 /* XCRemoteSwiftPackageReference "fido2sdk-dev" */;
+			productName = fido2ui;
+		};
+		99F545013024905F00015571 /* SDKSPM */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99F545003024905F00015571 /* XCRemoteSwiftPackageReference "SDKSPM-dev" */;
 			productName = SDKSPM;
 		};
 /* End XCSwiftPackageProductDependency section */

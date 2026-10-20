@@ -11,6 +11,9 @@ protocol RegistrationInteractor {
 
     func fetchUserProfiles()
     func setUserPrompt(_ prompt: String)
+// POC - Start
+    func setFidoUserPrompt(_ prompt: String)
+// POC - End
     func setBrowserChallenge(_ challenge: BrowserRegistrationChallenge)
     func setCustomChallenge(_ challenge: CustomRegistrationChallenge)
     func setStateless(_ stateless: Bool)
@@ -92,8 +95,9 @@ class RegistrationInteractorReal: RegistrationInteractor {
     
     func register(with provider: String, stateless: Bool) {
         app.system.isProcessing = true
-        let scopes = ["read", "openid", "email"]
+        let scopes = ["read", "openid", "email", "profile", "write"]
         let provider = userClient.identityProviders.first(where: { $0.name == provider })
+
         if stateless {
             userClient.registerStatelessUserWith(identityProvider: provider, scopes: scopes, delegate: self)
         } else {
@@ -107,6 +111,11 @@ class RegistrationInteractorReal: RegistrationInteractor {
         } else if let customChallenge {
             customChallenge.sender.cancel(customChallenge, withUnderlyingError: nil)
         }
+        app.system.setPromptState(.hidden)
+        app.system.setFidoChallengeState(.hidden)
+        app.system.setScannerState(.hidden)
+        browserChallenge = nil
+        customChallenge = nil
         switch app.system.userState {
         case .sso:
             if let userId = userClient.authenticatedUserProfile?.profileId {
@@ -129,6 +138,9 @@ class RegistrationInteractorReal: RegistrationInteractor {
         app.system.setEnrollmentState(.unenrolled)
         app.system.setPinPadState(.hidden)
         app.system.setScannerState(.hidden)
+        app.system.setPromptState(.hidden)
+        app.system.setFidoChallengeState(.hidden)
+        pinPadInteractor.resetChallenges()
         browserChallenge = nil
         customChallenge = nil
         app.setSystemInfo(string: "Profile \(profileId) has been registered successfully.")
@@ -151,18 +163,55 @@ extension RegistrationInteractorReal {
     func didReceiveCustomRegistrationFinishChallenge(_ challenge: any OneginiSDKiOS.CustomRegistrationChallenge) {
         setCustomChallenge(challenge)
         app.system.setUserState(.registering(.api))
+        
+        // POC - START
+        // DigiD works regardless stateless
+        if isPocDigidTwoStep(challenge) {
+            guard let urlString = challenge.info?.data, let url = URL(string: urlString) else {
+                // random error passed just to cancel
+                challenge.sender.cancel(challenge, withUnderlyingError: SDKError.unknown)
+                return
+            }
+            // TODO: what if the DigiD app refuse to handle that error? Do some kind of timout
+            UIApplication.shared.open(url)
+            return
+        }
+        // POC - END
+        
         if stateless {
             challenge.sender.respond(with: nil, to: challenge)
         } else {
             if isTypeOfTwoStepRegistration(challenge) {
                 /// Prompt for the input
-                app.system.setPromptState(.shown)
+                
+                // POC - Start
+                ///Extension Engine
+                /// Persist the challenge data for the poc_fido_reg_2_step identity provider
+                if challenge.identityProvider.identifier == "poc_fido_reg_2_step" {
+                    let serverPromptValue = challenge.info?.data ?? ""
+                    app.system.store.fidoRegData = serverPromptValue
+                    app.system.setFidoChallengeState(.shown(serverPrompt: serverPromptValue))
+                } else if challenge.identityProvider.identifier == "poc_fido_auth_2_step" {
+                    let serverPromptValue = challenge.info?.data ?? ""
+                    app.system.setFidoChallengeState(.shown(serverPrompt: serverPromptValue))
+                } else {
+                // POC - End
+                    app.system.setPromptState(.shown)
+                }
             } else {
                 /// You can ask the user about the response for one step registration in different ways, e.g. by asking for password or scanning the QR code:
                 qrScannerInteractor.scan(to: self)
             }
         }
     }
+    
+    // POC - Start
+    ///Extension Engine
+    func convertServerPromptToDictionary(_ jsonString: String) -> [String: Any]? {
+        guard let jsonData = jsonString.data(using: .utf8) else { return nil }
+        return try? JSONSerialization.jsonObject(with: jsonData) as? [String: Any]
+    }
+    // POC - End
 
     func didReceiveCustomRegistrationInitChallenge(_ challenge: any OneginiSDKiOS.CustomRegistrationChallenge) {
         setCustomChallenge(challenge)
@@ -170,7 +219,42 @@ extension RegistrationInteractorReal {
         if stateless {
             challenge.sender.respond(with: nil, to: challenge)
         } else {
-            challenge.sender.respond(with: DummyData.customAuthInitialChallenge, to: challenge)
+            // POC - Start
+            ///Extension Engine
+            if challenge.identityProvider.identifier == "poc_fido_auth_2_step" {
+                app.system.isFidoRegistration = false
+                guard
+                    let data = app.system.store.fidoRegData.data(using: .utf8),
+                    let dict = try? JSONSerialization.jsonObject(with: data) as? [String: Any]
+                else {
+                    app.setSystemInfo(string: "No saved FIDO2 registration data found for authentication.")
+                    challenge.sender.cancel(challenge, withUnderlyingError: SDKError.unknown)
+                    return
+                }
+                let userId = dict["userId"]
+                let fidoData = ["userId": userId ?? ["userId": ""]] as [String: Any]
+                do {
+                    let jsonData = try JSONSerialization.data(
+                        withJSONObject: fidoData,
+                        options: [.prettyPrinted] // optional
+                    )
+                    
+                    if let jsonString = String(data: jsonData, encoding: .utf8) {
+                        challenge.sender.respond(with: jsonString, to: challenge)
+                    }
+                } catch {
+                    print("Failed to convert dictionary to JSON: \(error)")
+                    challenge.sender.cancel(challenge, withUnderlyingError: error)
+                }
+                
+            } else if challenge.identityProvider.identifier == "poc_fido_reg_2_step" {
+                app.system.isFidoRegistration = true
+                challenge.sender.respond(with: "", to: challenge)
+            } else {
+                challenge.sender.respond(with: DummyData.customAuthInitialChallenge, to: challenge)
+            }
+            // POC - End
+            
         }
     }
     
@@ -183,6 +267,9 @@ extension RegistrationInteractorReal {
         default:
             app.setSystemInfo(string: error.localizedDescription)
         }
+        app.system.setPromptState(.hidden)
+        app.system.setFidoChallengeState(.hidden)
+        app.system.setScannerState(.hidden)
         browserChallenge = nil
         customChallenge = nil
     }
@@ -208,6 +295,31 @@ extension RegistrationInteractorReal: QRScannerDelegate {
         app.system.setPromptState(.hidden)
         customChallenge.sender.respond(with: prompt, to: customChallenge)
     }
+    
+    // POC - Start
+    ///Extension Engine
+    func setFidoUserPrompt(_ jsonResponse: String) {
+        guard let customChallenge else { return }
+
+        guard
+            let data = app.system.store.fidoRegData.data(using: .utf8),
+            let dict = try? JSONSerialization.jsonObject(with: data) as? [String: Any]
+        else {
+            return
+        }
+        let stringToFinishReq: [String: String] = [
+                    "fido2": jsonResponse,
+                    "userId": dict["userId"] as! String
+                ]
+   
+        guard let jsonData = try? JSONSerialization.data(withJSONObject: stringToFinishReq, options: []),
+        
+        let jsonString = String(data: jsonData, encoding: .utf8) else {
+            fatalError("Killer")
+        }
+        customChallenge.sender.respond(with: jsonString, to: customChallenge)
+    }
+    // POC - End
 }
 
 private extension RegistrationInteractorReal {
@@ -231,11 +343,28 @@ private extension RegistrationInteractorReal {
         return interactors.qrScannerInteractor
     }
 
+    // POC - Start
+    ///Extension Engine
+    var fidoRegistrationInteractor: Fido2Interactor {
+        @Injected var interactors: Interactors
+        return interactors.fidoRegistrationInteractor
+    }
+    // POC - End
+
     var device: ShowcaseApp.DeviceData { app.deviceData }
     
     func isTypeOfTwoStepRegistration(_ challenge: any OneginiSDKiOS.CustomRegistrationChallenge) -> Bool {
-        return challenge.identityProvider.identifier == "New2step"
+        // POC - Start
+        ///Extension Engine
+        let twoStepIdentifier = ["New2step", "poc_fido_reg_2_step", "poc_fido_auth_2_step"]
+        // POC - End
+        return twoStepIdentifier.contains(challenge.identityProvider.identifier)
     }
+    // POC - START
+    func isPocDigidTwoStep(_ challenge: any OneginiSDKiOS.CustomRegistrationChallenge) -> Bool {
+        return ["poc_digid_two_step"].contains(challenge.identityProvider.identifier)
+    }
+    // POC - END
 }
 
 extension RegistrationInteractorReal: RegistrationDelegate {

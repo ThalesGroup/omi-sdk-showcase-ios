@@ -1,3 +1,8 @@
 #import <Foundation/Foundation.h>
 
-// Put you OneginiConfigModel here
+@interface OneginiConfigModel : NSObject
+
++ (NSArray *)certificates;
++ (NSDictionary *)configuration;
+
+@end

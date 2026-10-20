@@ -5,7 +5,7 @@ import SwiftUI
 @main
 struct SDK_ShowcaseApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-
+    
     var body: some Scene {
         WindowGroup {
             RootView()

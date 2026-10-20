@@ -63,7 +63,14 @@ private extension Injection {
         container.register(ResourceInteractor.self) { resolver in
             ResourceInteractorReal(app: resolver.resolve(ShowcaseApp.self)!)}
             .inObjectScope(.container)
-        
+
+        // POC - Start
+        ///Extension Engine
+        container.register(Fido2Interactor.self) { resolver in
+            Fido2InteractorReal(app: resolver.resolve(ShowcaseApp.self)!) }
+            .inObjectScope(.container)
+        // POC - End
+
         container.register(Interactors.self) { resolver in
             Interactors(categoriesInteractor: resolver.resolve(CategoriesInteractor.self)!,
                         sdkInteractor: resolver.resolve(SDKInteractor.self)!,
@@ -74,7 +81,12 @@ private extension Injection {
                         pinPadInteractor: resolver.resolve(PinPadInteractor.self)!,
                         qrScannerInteractor: resolver.resolve(QRScannerInteractor.self)!,
                         pushInteractor: resolver.resolve(PushNotitificationsInteractor.self)!,
-                        resourceInteractor: resolver.resolve(ResourceInteractor.self)!)}
+                        resourceInteractor: resolver.resolve(ResourceInteractor.self)!,
+                        // POC - Start
+                        ///Extension Engine
+                        fidoRegistrationInteractor: resolver.resolve(Fido2Interactor.self)!
+                        // POC - End
+            )}
             .inObjectScope(.container)
         
         return container

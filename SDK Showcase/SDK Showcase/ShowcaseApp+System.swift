@@ -6,6 +6,10 @@ extension ShowcaseApp {
     class System: Equatable, ObservableObject {
         @Published var isSDKInitialized = false
         @Published var isProcessing = false
+        // POC - Start
+        ///Extension Engine
+        @Published var isFidoRegistration = false
+        // POC - End
         @Published var store = PersistenceStore(store: UserDefaultsStore())
 
         @Published private(set) var lastInfoDescription: String? = nil
@@ -14,6 +18,10 @@ extension ShowcaseApp {
         @Published private(set) var pinPadState: PinPadState = .hidden
         @Published private(set) var scannerState: ScannerState = .hidden
         @Published private(set) var promptState: PromptState = .hidden
+        // POC - Start
+        ///Extension Engine
+        @Published private(set) var fidoChallengeState: FidoChallengeState = .hidden
+        // POC - End
 
         var autoinitializeSDK: Bool {
             get {
@@ -57,6 +65,13 @@ extension ShowcaseApp {
         func setPromptState(_ newState: PromptState) {
             promptState = newState
         }
+
+        // POC - Start
+        ///Extension Engine
+        func setFidoChallengeState(_ newState: FidoChallengeState) {
+            fidoChallengeState = newState
+        }
+        // POC - End
         
         func setEnrollmentState(_ newState: EnrollmentState) {
             enrollmentState = newState
@@ -80,6 +95,21 @@ extension ShowcaseApp {
             get { promptState != .hidden }
             set { promptState = newValue ? .shown : .hidden }
         }
+
+        // POC - Start
+        ///Extension Engine
+        var shouldShowFidoChallenge: Bool {
+            get { fidoChallengeState != .hidden }
+            set { fidoChallengeState = newValue ? .shown(serverPrompt: "") : .hidden }
+        }
+
+        var fidoServerPrompt: String {
+            if case .shown(let prompt) = fidoChallengeState {
+                return prompt
+            }
+            return ""
+        }
+        // POC - End
         
         func setInfo(_ description: String) {
             lastInfoDescription = description
